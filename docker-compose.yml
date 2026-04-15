@@ -1,0 +1,31 @@
+# docker-compose.yml
+services:
+  app:
+    build: .
+    container_name: tw-app
+    ports:
+      - "8080:80"
+    volumes:
+      - ./src:/var/www/html:Z
+    environment:
+      - DB_HOST=db
+    networks:
+      - tw-network
+
+  db:
+    image: mariadb:latest
+    container_name: tw-db
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root_password
+      MYSQL_DATABASE: universidad_db
+      MYSQL_USER: francisco
+      MYSQL_PASSWORD: mi_password
+    volumes:
+      - ./data:/var/lib/mysql:Z
+    networks:
+      - tw-network
+
+networks:
+  tw-network:
+    driver: bridge

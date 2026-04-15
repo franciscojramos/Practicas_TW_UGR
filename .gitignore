@@ -1,0 +1,24 @@
+# Datos de MariaDB/MySQL (volumen Docker: ibdata, logs Aria, bases, etc.)
+/data/
+
+# Variables de entorno y secretos (contraseñas de BD, etc.)
+.env
+.env.*
+!.env.example
+
+# Dependencias PHP (si usas Composer)
+/vendor/
+
+# IDE y sistema
+.idea/
+*.swp
+*~
+.DS_Store
+Thumbs.db
+
+# Logs y cachés locales
+*.log
+.phpunit.result.cache
+
+# Overrides locales de Docker
+docker-compose.override.yml
