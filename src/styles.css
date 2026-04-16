@@ -253,7 +253,13 @@ body.pagina-sobremi .tabla-asignaturas {
     font-size: clamp(0.85rem, 2.5vw, 1rem);
 }
 
-body.pagina-sobremi .tabla-asignaturas thead th {
+body.pagina-sobremi .tabla-asignaturas td {
+    padding: 0.55rem 0.5rem;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* Primera fila del CSV solo con <td>: mismo aspecto que la antigua cabecera */
+body.pagina-sobremi .tabla-asignaturas tbody tr:first-child td {
     background: #356b8c;
     color: #ffffff;
     padding: 0.65rem 0.5rem;
@@ -261,17 +267,12 @@ body.pagina-sobremi .tabla-asignaturas thead th {
     border: 1px solid #2d5a75;
 }
 
-body.pagina-sobremi .tabla-asignaturas td {
-    padding: 0.55rem 0.5rem;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-}
-
-body.pagina-sobremi .tabla-asignaturas tbody tr:nth-child(odd) {
+body.pagina-sobremi .tabla-asignaturas tbody tr:nth-child(even):not(:first-child) {
     background-color: rgba(255, 255, 255, 0.92);
     color: #1c1c1c;
 }
 
-body.pagina-sobremi .tabla-asignaturas tbody tr:nth-child(even) {
+body.pagina-sobremi .tabla-asignaturas tbody tr:nth-child(odd):not(:first-child) {
     background-color: #4a7ead;
     color: #e8f1f8;
 }

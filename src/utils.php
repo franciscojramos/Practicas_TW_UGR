@@ -1,6 +1,6 @@
 <?php
 
-/** Genera una tabla HTML a partir de un CSV (1ª fila: cabecera con <th>, resto: <td>). */
+/** Genera una tabla HTML a partir de un CSV: cada fila <tr>, cada valor en <td> (guion). */
 function muestra_tabla(string $fichero): string
 {
     $fh = fopen($fichero, 'r');
@@ -8,8 +8,7 @@ function muestra_tabla(string $fichero): string
         return '';
     }
 
-    $html = '<table class="tabla-asignaturas">';
-    $esPrimeraFila = true;
+    $html = '<table class="tabla-asignaturas"><tbody>';
 
     while (($fila = fgetcsv($fh)) !== false) {
         $hayContenido = false;
@@ -20,16 +19,6 @@ function muestra_tabla(string $fichero): string
             }
         }
         if (!$hayContenido) {
-            continue;
-        }
-
-        if ($esPrimeraFila) {
-            $html .= '<thead><tr>';
-            foreach ($fila as $celda) {
-                $html .= '<th>' . htmlspecialchars((string) $celda, ENT_QUOTES, 'UTF-8') . '</th>';
-            }
-            $html .= '</tr></thead><tbody>';
-            $esPrimeraFila = false;
             continue;
         }
 

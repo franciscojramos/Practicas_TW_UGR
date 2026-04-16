@@ -22,8 +22,8 @@ $atributosBody = $claseBody !== '' ? ' class="' . htmlspecialchars($claseBody, E
     <header class="encabezado-blog text-center py-3 px-2">
         <h1 class="titulo-blog h2 mb-1">Francisco Ramos Blog</h1>
         <p class="subtitulo-blog mb-0 small">Tecnología, Ingeniería y Negocios</p>
-        <?php if (!empty($_COOKIE['author'])): ?>
-        <p class="subtitulo-blog mb-0 small">Usuario: <?php echo htmlspecialchars($_COOKIE['author'], ENT_QUOTES, 'UTF-8'); ?></p>
+        <?php if (!empty($_COOKIE['autor'])): ?>
+        <p class="subtitulo-blog mb-0 small">Usuario: <?php echo htmlspecialchars($_COOKIE['autor'], ENT_QUOTES, 'UTF-8'); ?></p>
         <?php endif; ?>
     </header>
 

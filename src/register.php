@@ -26,7 +26,7 @@ if (!$newsletterMarcado) {
     exit;
 }
 
-if (!empty($_COOKIE['author'])) {
+if (!empty($_COOKIE['autor'])) {
     header('Location: index.php');
     exit;
 }
@@ -35,7 +35,7 @@ $name = trim((string) $_POST['name']);
 $surname = isset($_POST['surname']) ? trim((string) $_POST['surname']) : '';
 $fullname = trim($name . ' ' . $surname);
 
-setcookie('author', $fullname, [
+setcookie('autor', $fullname, [
     'expires' => time() + 60 * 60 * 24 * 30,
     'path' => '/',
     'httponly' => true,
